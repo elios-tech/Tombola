@@ -1,8 +1,12 @@
 <RCC>
     <qresource prefix="/background">
         <file>background.jpg</file>
+        <file>background_resized.jpg</file>
     </qresource>
     <qresource prefix="/icons">
         <file>eliosLogo.png</file>
+        <file>pushbtn_icon.png</file>
+        <file>pushbtnPressed_icon.png</file>
+        <file>textBoxBackground.png</file>
     </qresource>
 </RCC>

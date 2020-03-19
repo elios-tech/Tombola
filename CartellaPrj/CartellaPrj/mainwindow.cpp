@@ -224,12 +224,12 @@ void MainWindow::paintButton(void)
     {
         if (colored[i] == false)
         {
-            pushBtn[i]->setStyleSheet("background-color: yellow");
+            pushBtn[i]->setStyleSheet("background-image: url(:/icons/pushbtnPressed_icon.png);\nbackground-color: rgb(0, 0, 0);");
             colored[i] = true;
         }
         else
         {
-            pushBtn[i]->setStyleSheet("background-color: none");
+            pushBtn[i]->setStyleSheet("background-image: url(:/icons/pushbtn_icon.png);\nbackground-color: rgb(0, 0, 0);");
             colored[i] = false;
         }
     }
