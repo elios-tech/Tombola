@@ -185,10 +185,12 @@ void MainWindow::on_drawBtn_released()
     t = clock();
     srand(t);
 
+    // Generating a non-zero random number
+    // which has not already been extracted
     do
     {
         alreadyPresent = false;
-        // Generating a non-zero random number
+
         do
         {
             n = rand() % (RANGE_NUMBER_TO_GENERATE + 1);
@@ -219,4 +221,18 @@ void MainWindow::on_drawBtn_released()
     ui->numberTxt->setText(QString::number(n));
     ui->numberTxt->setFontPointSize(42);
     ui->numberTxt->setAlignment(Qt::AlignCenter);
+
+    // Printing the last 5 extracted number
+    ui->extractedTxt->clear();
+    for (int i = 0; (i < 5) && (i < (extrIdx - 1)); i++)
+    {
+        ui->extractedTxt->setAlignment(Qt::AlignCenter);
+        ui->extractedTxt->setFontPointSize(42);
+        ui->extractedTxt->append(QString::number(extractedNums[extrIdx - i - 2]));
+    }
+    // Moving scrollbar cursor (if èresent) to top in
+    // order to show the last extracted number first.
+    ui->extractedTxt->moveCursor(QTextCursor::Start);
+
+
 }
